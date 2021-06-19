@@ -28,15 +28,15 @@ const LoginPage = () => {
                         name="email"
                         title="Email"
                         type="text"
-                        // placeholder="Email address"
                         component={CustomInputComponent}
+                        required
                     />
                     <Field
                         name="password"
                         title="Password"
                         type="password"
-                        // placeholder="Password"
                         component={CustomInputComponent}
+                        required
                     />
 
                 </Form>

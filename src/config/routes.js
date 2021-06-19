@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { lazy, Suspense } from 'react';
 import {BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import AuthRoutes from "./AuthRoutes"
 import ContentLoader from "../components/Loader";
 import history from '../helpers/history';
 
@@ -18,9 +19,9 @@ const Routes = props => {
               path="/create-account"
               component={SignUp}
             /> */}
-            <Login exact path="/" component={Login} />
+            <AuthRoutes exact path="/" component={Login} />
 
-            <ForgotPasswordPage
+            <AuthRoutes
               exact
               path="/forgot-password"
               component={ForgotPasswordPage}

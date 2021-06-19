@@ -59,13 +59,6 @@
     right: 15px;
   }
   
-
-  .form-control input:focus + label {
-    font-size: 12px;
-    transform: translateY(-140%);
-    transition: transform 0.18s  ease-in-out;
-}
-  
   .form-control label span {
     display: inline-block;
     font-size: 18px;
@@ -78,6 +71,10 @@
     top: 15px;
     left: 0;
     color: #647C8F;
-    transform: translateY(-140%);
-    transition: transform 0.18s  ease-in-out;
   }
+
+  input:focus ~ label,input:not(:focus):valid ~ label{
+  font-size: 12px;
+  transform: translateY(-140%);
+  transition: transform 0.18s  ease-in-out;
+}
