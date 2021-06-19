@@ -32,11 +32,13 @@ module.exports = {
         primary: '#03045E',
         grey:{
           default: "#647C8F",
+          bg: '#F9F9F9',
         },
         dark: "#001526",
         others:{
-          teal: '#3BFAC0',
-          green: '#216C2A'
+          purple1: '#02003B',
+          purple2: '#F3F3FD',
+          purple3: '#7775A3',
         }
       },
       spacing: {

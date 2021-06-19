@@ -5,7 +5,7 @@ import {
   
   const INITIAL_STATE = {
     user: null,
-    isAuthenticated: false,
+    isAuthenticated: true,
   };
   
   // eslint-disable-next-line import/no-anonymous-default-export

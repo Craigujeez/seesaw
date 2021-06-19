@@ -78,3 +78,9 @@
   transform: translateY(-140%);
   transition: transform 0.18s  ease-in-out;
 }
+
+li:hover{
+  background: #D7D7F5;
+  border-radius: 3px;
+  cursor: pointer;
+}

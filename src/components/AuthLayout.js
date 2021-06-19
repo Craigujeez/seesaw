@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 const AuthLayout = ({children}) => {
     const now = dayjs();
     return ( 
-        <div className="cairo w-full h-screen bg-login bg-no-repeat bg-cover pt-56">
+        <div className="w-full h-screen bg-login bg-no-repeat bg-cover pt-56">
             <div className="auth w-10/12 mx-auto flex pl-16 pt-14 h-370">
                 <div className="w-472 text-white relative z-10">
                     <div>
