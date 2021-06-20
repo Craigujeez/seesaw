@@ -33,6 +33,7 @@ module.exports = {
         grey:{
           default: "#647C8F",
           bg: '#F9F9F9',
+          line: '#E4EAF0',
         },
         dark: "#001526",
         others:{

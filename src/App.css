@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
 @font-face {
     font-family: "cairo";
     src: url("./fonts/Cairo-Regular.woff")
@@ -83,4 +85,8 @@ li:hover{
   background: #D7D7F5;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.work{
+  font-family: 'Work Sans', sans-serif;
 }
