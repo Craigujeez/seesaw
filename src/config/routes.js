@@ -10,6 +10,8 @@ const Routes = props => {
     const Login = lazy(() => import('../pages/Auth'));
     const ForgotPasswordPage = lazy(() => import('../pages/Auth/ForgotPassword.js'));
     const Dashboard = lazy(() => import('../pages/Dashboard'));
+    const Repository = lazy(() => import("../pages/ProjectRepository"));
+    const Update = lazy(() => import("../pages/ProjectUpdate"));
 
   return (
     <>
@@ -29,7 +31,8 @@ const Routes = props => {
               component={ForgotPasswordPage}
             />
             <PrivateRoutes exact path="/dashboard" component={Dashboard} />
-            
+            <PrivateRoutes exact path="/project-repository" component={Repository} />
+            <PrivateRoutes exact path="/project-update" component={Update} />
             <Redirect to="/" />
           </Switch>
         </Suspense>

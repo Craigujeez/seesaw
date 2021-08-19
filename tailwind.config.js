@@ -34,12 +34,15 @@ module.exports = {
           default: "#647C8F",
           bg: '#F9F9F9',
           line: '#E4EAF0',
+          notif: '#A2ADB8'
         },
+        pending: '#0077B6',
         dark: "#001526",
         others:{
           purple1: '#02003B',
           purple2: '#F3F3FD',
           purple3: '#7775A3',
+          purple4: '#414080',
         }
       },
       spacing: {

@@ -1,14 +1,18 @@
 import React,{useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import Icons from "./Icons";
 import history from "../helpers/history";
+import Notifications from '../pages/Notifications';
 
 const PrivateLayout = ({children, ...rest}) => {
-    const [toggle, settoggle] = useState(true)
+    const history = useHistory();
+
+    const [toggle, settoggle] = useState(true);
 
     const DataSet = [
-        {title:"Projects Update", icon:"clipboard", children:[],active:false,link:"#"},
-        {title:"Projects Monitoring", icon:"bookmark", children:["Geofencing", "Agents","Notification"],active:false,link:"/dashboard"},
-        {title:"Projects Repository", icon:"edit", children:[],active:false,link:"#"}
+        {title:"Projects Update", icon:"clipboard", children:[],active:false,link:"project-update"},
+        {title:"Projects Monitoring", icon:"bookmark", children:["Geofencing", "Agents","Notification"],active:false,link:"dashboard"},
+        {title:"Projects Repository", icon:"edit", children:[],active:false,link:"project-repository"}
     ]
     const DataSet2 = [
         {title:"Users", icon:"profile",active:false,link:"#"},
@@ -23,11 +27,11 @@ const PrivateLayout = ({children, ...rest}) => {
                     {DataSet.map(item => {
                         return (
                             <div className="mb-4 text-others-purple1">
-                                <div className="flex cursor-pointer"  onClick={()=> settoggle(!toggle)}> 
+                                <div className="flex cursor-pointer" onClick={()=> history.push(`/${item.link}`)} > 
                                     <Icons className="mr-3 my-auto" id={item.icon}/>
                                     <p className="mr-3" onClick={()=> history.push(item.link)}>{item.title}</p>
                                     {item.children.length > 0 && (
-                                        <div>
+                                        <div onClick={()=> item.children.length !== 0 ? settoggle(!toggle) : null}>
                                             {toggle ? (
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
@@ -74,15 +78,7 @@ const PrivateLayout = ({children, ...rest}) => {
             <div className="w-8/12">
                 {children}
             </div>
-            <div className="w-72 h-screen pl-6 pt-16 bg-grey-bg">
-                <div className="w-56 mx-auto" >
-                    <div className="w-full flex justify-between">
-                        <h1 className="work text-primary text-xl"> Notifications</h1>
-                        <Icons width="24px" height="24px" className="mr-3 my-auto" id="notif"/>
-                    </div>
-                </div>
-
-            </div>
+            <Notifications/>
 
         </div>
 
