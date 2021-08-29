@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import Icons from "./Icons";
-import history from "../helpers/history";
 import Notifications from '../pages/Notifications';
 
 const PrivateLayout = ({children, ...rest}) => {

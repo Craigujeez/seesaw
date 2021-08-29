@@ -9,12 +9,12 @@ const AuthRoutes = ({ component: PrivateComponent, ...rest}) => {
         <Route
           {...rest}
           render={props =>
-            // auth.isAuthenticated ? (
+            auth.isAuthenticated ? (
                 <PrivateComponent {...props} isLoading={loading.isLoading} />
-            // ) : (
-            //   //enable this line below to make route protected
-            //   // <Redirect to="/" />
-            // )
+            ) : (
+              //enable this line below to make route protected
+              <Redirect to="/" />
+            )
           }
         />
 
