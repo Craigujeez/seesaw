@@ -1,10 +1,12 @@
-import React,{useState} from 'react';
-import { Link,useLocation, useHistory } from "react-router-dom";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import {useLocation, useHistory } from "react-router-dom";
 import Icons from "./Icons";
 import Notifications from '../pages/Notifications';
+import { signOut } from '../redux/actions/authActions';
 
 const PrivateLayout = ({children, ...rest}) => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const history = useHistory();
     const { pathname } = useLocation();
     const activeLink = pathname.split("/")[1];
@@ -59,7 +61,7 @@ const PrivateLayout = ({children, ...rest}) => {
 
                 </div>
 
-                <div className="flex cursor-pointer">
+                <div className="flex cursor-pointer" onClick={() => signOut()(dispatch)}>
                     <Icons className="mr-3 my-auto" id="logout"/>
                     <p className="uppercase text-xs font-bold text-white">Log Out</p>
                 </div>

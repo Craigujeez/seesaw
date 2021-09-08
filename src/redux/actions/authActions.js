@@ -13,7 +13,6 @@ export function loginUser(userData,history) {
           localStorage.clear();
           const { token, name,email } = response.data.data.attributes;
           localStorage.token = token;
-          axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           dispatch({ type: LOGIN_USER, user: {email,name} });
           dispatch({ type: LOADING_FALSE });
           history.push("/dashboard");

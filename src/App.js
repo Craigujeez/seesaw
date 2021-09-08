@@ -8,13 +8,14 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-
+  const token = localStorage.token;
   const logout = () => {
     signOut()(dispatch);
     return;
   }
   axios.defaults.baseURL = 'https://api-see-saw.herokuapp.com/v1';
-
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  
   const inactivityTime = () => {
     let time;
     window.onload = resetTimer;
