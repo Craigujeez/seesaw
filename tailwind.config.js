@@ -40,8 +40,8 @@ module.exports = {
         dark: "#001526",
         others:{
           purple1: '#02003B',
-          purple2: '#F3F3FD',
-          purple3: '#7775A3',
+          purple2: '#03045E',
+          purple3: '#9493AD',
           purple4: '#414080',
         }
       },

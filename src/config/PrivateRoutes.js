@@ -3,13 +3,13 @@ import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AuthRoutes = ({ component: PrivateComponent, ...rest}) => {
-    const auth = useSelector(state => state.auth)
+    // const auth = useSelector(state => state.auth)
     const loading = useSelector(state => state.loading)
     return ( 
         <Route
           {...rest}
           render={props =>
-            auth.isAuthenticated ? (
+            localStorage.token ? (
                 <PrivateComponent {...props} isLoading={loading.isLoading} />
             ) : (
               //enable this line below to make route protected

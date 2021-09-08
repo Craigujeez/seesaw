@@ -26,22 +26,29 @@ export function loginUser(userData,history) {
       }
     };
   }
-  export function forgotPassword(userData,history) {
-      return async (dispatch) => {
-        try {
-          dispatch({ type: LOADING_TRUE });
-          const response = await axios.post("/user/forget-password",userData);
-          const { status, message } = response.data;
-          if (status === "success") {
-            dispatch({ type: LOADING_FALSE });
-            cogoToast.success(message)
-            history.push("/");
-          } else {
-            dispatch({ type: LOADING_FALSE });
-          }
-        } catch (err) {
-          dispatch({ type: LOADING_FALSE });
-          cogoToast.error("oops... an error has occurred");
-        }
-      };
+export function forgotPassword(userData,history) {
+  return async (dispatch) => {
+    try {
+      dispatch({ type: LOADING_TRUE });
+      const response = await axios.post("/user/forget-password",userData);
+      const { status, message } = response.data;
+      if (status === "success") {
+        dispatch({ type: LOADING_FALSE });
+        cogoToast.success(message)
+        history.push("/");
+      } else {
+        dispatch({ type: LOADING_FALSE });
+      }
+    } catch (err) {
+      dispatch({ type: LOADING_FALSE });
+      cogoToast.error("oops... an error has occurred");
     }
+  };
+}
+
+export const signOut = () => dispatch => {
+  // Set global loading to false
+  dispatch({ type: LOADING_FALSE });
+  localStorage.clear();
+  dispatch({ type: LOGOUT_USER });
+};
