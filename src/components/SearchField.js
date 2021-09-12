@@ -9,7 +9,7 @@ const SearchField = ({className,handleChange,handleSearch , ...rest}) => {
                 placeholder="Search"
                 type="text"
                 onChange={handleChange}
-                className="w-full outline-none"
+                className="w-full outline-none bg-transparent"
                 {...rest}
             />
             <button className="cursor-pointer outline-none" onClick={handleSearch}>

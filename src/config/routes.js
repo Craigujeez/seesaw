@@ -11,6 +11,7 @@ const Routes = props => {
     const ForgotPasswordPage = lazy(() => import('../pages/Auth/ForgotPassword.js'));
     const Dashboard = lazy(() => import('../pages/Dashboard'));
     const Repository = lazy(() => import("../pages/ProjectRepository"));
+    const Project = lazy(() => import("../pages/ProjectRepository/Project.js"));
     const Update = lazy(() => import("../pages/ProjectUpdate"));
 
   return (
@@ -32,6 +33,7 @@ const Routes = props => {
             />
             <PrivateRoutes exact path="/dashboard" component={Dashboard} />
             <PrivateRoutes exact path="/project-repository" component={Repository} />
+            <PrivateRoutes exact path="/project-repository/:id" component={Project} />
             <PrivateRoutes exact path="/project-update" component={Update} />
             <Redirect to="/" />
           </Switch>

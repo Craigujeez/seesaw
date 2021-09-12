@@ -1,4 +1,4 @@
-import {FETCH_PROJECT_REPOSITORY} from "../types/projectRepositoryTypes";
+import {FETCH_PROJECT_REPOSITORY,FETCH_SINGLE_PROJECT} from "../types/projectRepositoryTypes";
  
  const INITIAL_STATE = {
    data: [],
@@ -9,8 +9,15 @@ import {FETCH_PROJECT_REPOSITORY} from "../types/projectRepositoryTypes";
  export default (state = INITIAL_STATE, action) => {
    switch (action.type) {
      case FETCH_PROJECT_REPOSITORY:
-        return {...state, data: action.payload,
-       }
+        return {
+            ...state,
+            data: action.payload,
+        }
+     case FETCH_SINGLE_PROJECT:
+         return {
+             ...state,
+            single: action.payload
+         }
      default:
        return state;
    }

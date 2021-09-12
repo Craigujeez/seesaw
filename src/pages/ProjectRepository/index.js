@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import PrivateLayout from "../../components/PrivateLayout";
 import InputSelect from '../../components/InputSelect';
 import SearchField from '../../components/SearchField';
@@ -9,6 +10,7 @@ import { fetchProjects } from '../../redux/actions/projectRepositoryActions';
 
 const ProjectRepository = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const loading = useSelector(state => state.loading);
   const Repositories = useSelector(state => state.projectRepository)
   const [status, setstatus] = useState();
@@ -27,7 +29,6 @@ const ProjectRepository = () => {
     fetchProjects()(dispatch);
   }, [])
 
-  console.log(Repositories, "repositories");
   if (loading.globalLoading) {
     return (
       <Loader
@@ -67,7 +68,7 @@ const ProjectRepository = () => {
                 <div className="w-536">
                     <SearchField/>
                 </div>
-                {Repositories.data?.map(item => <Project key={item.uuid} item={item} /> )}
+                {Repositories.data?.map(item => <Project key={item.uuid} item={item} history={history}/> )}
 
             </div>
         </PrivateLayout>
@@ -79,13 +80,16 @@ export default ProjectRepository;
 const Project = (props) => {
     const {img,status,title,description} = props.item
     return (
-        <div className="mt-10 flex mb-11 h-36">
+        <div className="mt-10 flex mb-11 h-52 bg-white w-full pl-6 pt-6 shadow-prc">
             <div className=" h-36">
                 <img className="w-72 object-cover" alt="project" src={img || Img}/>
             </div>
-            <div className="pl-12">
-                <h1 className="mb-3 font-semibold text-xl text-others-purple4">{title}</h1>
-                <p className="text-sm font-semibold text-left w-96 mb-3">{description}</p>
+            <div className="pl-12 w-370 pb-6">
+                <h1 
+                    className="mb-3 font-semibold text-xl text-others-purple4 cursor-pointer "
+                    onClick={()=>props.history.push(`/project-repository/${props.item.uuid}`)}
+                >{title}</h1>
+                <p className="text-sm font-semibold text-left w-full mb-3">{description}</p>
                 <h1 className="text-lg">Status : <span className="text-xl text-pending">{status}</span></h1>
             </div>
         </div>

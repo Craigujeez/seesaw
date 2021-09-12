@@ -54,6 +54,7 @@ module.exports = {
       },
       boxShadow: {
         acs: '0 0 20px rgb(0 0 0 / 25%)',
+        prc: '0px 4px 86px rgba(65, 64, 128, 0.08)'
       },
       fontSize: {
         'lt': '2rem',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
 import {useLocation, useHistory } from "react-router-dom";
 import Icons from "./Icons";
@@ -10,6 +10,7 @@ const PrivateLayout = ({children, ...rest}) => {
     const history = useHistory();
     const { pathname } = useLocation();
     const activeLink = pathname.split("/")[1];
+    const [toggle, settoggle] = useState(true);
     // const responsiveNav = useSelector(state => state.loading.responsiveNav)
     const handleActiveLink = param => {
       if (param === activeLink) {
@@ -38,8 +39,23 @@ const PrivateLayout = ({children, ...rest}) => {
                                 <div className={`${handleActiveLink(item.link)} flex cursor-pointer`} onClick={()=> history.push(`/${item.link}`)} > 
                                     <Icons className="mr-3 my-auto" id={item.link === activeLink ? `${item.icon}2`: item.icon}/>
                                     <p className={`mr-3 ${item.link === activeLink ? "text-white font-bold ": ""}`} onClick={()=> history.push(item.link)}>{item.title}</p>
+                                    {item.children.length > 0 && activeLink === "dashboard" && (
+                                        <div onClick={()=> item.children.length !== 0 ? settoggle(!toggle) : null}>
+                                            {toggle ? (
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                                                </svg>
+                                            ) : (
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
-
+                                <ul>
+                                    {toggle && activeLink === "dashboard" && item.children.map(item => <li className="ml-6 pl-2 px-5 cursor-pointer">{item}</li>)}
+                                </ul>
                             </div>
                         )
                     })}
@@ -67,7 +83,7 @@ const PrivateLayout = ({children, ...rest}) => {
                 </div>
 
             </div>
-            <div className="w-8/12">
+            <div className="w-8/12 bg-grey-bg">
                 {children}
             </div>
             <Notifications/>
