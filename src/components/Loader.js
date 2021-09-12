@@ -13,9 +13,10 @@ const ContentLoader = React.memo(props => (
     >
       <Loader
         type={props.type || 'Puff'}
-        color="rgba(255, 255, 255, 0.3)"
+        color="#03045E"
         height={props.h || 60}
         width={props.w || 60}
+        visible={true}
       />
     </div>
   ));

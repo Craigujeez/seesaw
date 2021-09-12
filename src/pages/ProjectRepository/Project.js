@@ -29,7 +29,7 @@ const Project = (props) => {
     if (loading.globalLoading) {
       return (
         <Loader
-          type="Puff"
+          type="TailSpin"
           color="#ccc"
           h="45"
           w="45"

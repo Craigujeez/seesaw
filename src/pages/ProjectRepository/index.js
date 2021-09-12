@@ -32,12 +32,12 @@ const ProjectRepository = () => {
   if (loading.globalLoading) {
     return (
       <Loader
-        type="Puff"
+        type="TailSpin"
         color="#ccc"
         h="45"
         w="45"
         style={{
-          margin: "15rem auto",
+          margin: "20% auto",
           width: "5%",
         }}
       />
