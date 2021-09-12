@@ -45,7 +45,7 @@ const Project = (props) => {
             <div className=" pl-8 mx-auto overflow-y-scroll h-screen">
                 <div className="w-full flex mt-12 border-grey-line border-b">
                     <h1 
-                        className="work cursor-pointer text-xl text-others-purple2 mr-2"
+                        className="cursor-pointer text-xl text-others-purple2 mr-2"
                         onClick={()=>history.push("/project-repository")}
                     > Project Repository </h1>
                     <h1 className="work pb-4 text-xl text-others-purple2"> &gt; {PageData.title}</h1>
@@ -55,7 +55,7 @@ const Project = (props) => {
                     <img src={ProjectImage} className="rounded-2xl mix-blend-darken" alt="project banner"/>
                 </div>
                 <div>
-                    <h1 className="work text-2xl text-others-purple2 mb-6"> {PageData.title} </h1>
+                    <h1 className="text-2xl text-others-purple2 mb-6"> {PageData.title} </h1>
                     <p className="text-others-purple2 mb-6"> Executive Summary</p>
                     <p className="text-grey-default mb-12">{PageData.description}</p>
                     <p className="text-others-purple2 mb-6"> Partners</p>

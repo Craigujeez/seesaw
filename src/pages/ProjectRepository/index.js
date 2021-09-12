@@ -47,8 +47,8 @@ const ProjectRepository = () => {
         <PrivateLayout>
             <div className=" px-8 mx-auto overflow-y-scroll h-screen">
                 <div className="w-full flex justify-between border-b pt-12 pb-4">
-                    <h1 className="work border-grey-line text-xl "> Project Repository</h1>
-                    <div className="flex w-72 justify-between">
+                    <h1 className="work border-grey-line text-xl text-others-purple2"> Project Repository</h1>
+                    <div className="flex w-80 justify-between">
                         <div className=" w-52 mr-2">
                             <InputSelect
                                 options={Status}

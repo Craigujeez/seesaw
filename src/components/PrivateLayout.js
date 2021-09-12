@@ -28,7 +28,7 @@ const PrivateLayout = ({children, ...rest}) => {
         {title:"Role Management", icon:"profile",active:false,link:"#"}
     ]
     return ( 
-        <div className="w-full flex h-screen">
+        <div className="w-full flex h-screen work">
             <div className=" w-60 h-full bg-others-purple2 pl-8 pt-10">
                 <h1 className="uppercase font-bold text-white text-base leading-8 mb-8"> SeeSaw </h1>
                 <div className="mb-7">
@@ -83,7 +83,7 @@ const PrivateLayout = ({children, ...rest}) => {
                 </div>
 
             </div>
-            <div className="w-8/12 bg-grey-bg">
+            <div className="w-8/12 bg-white">
                 {children}
             </div>
             <Notifications/>
