@@ -12,6 +12,7 @@ export function loginUser(userData,history) {
           cogoToast.success("Login Successful")
           localStorage.clear();
           const { token, name,email } = response.data.data.attributes;
+          axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           localStorage.token = token;
           dispatch({ type: LOGIN_USER, user: {email,name} });
           dispatch({ type: LOADING_FALSE });

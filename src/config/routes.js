@@ -13,11 +13,12 @@ const Routes = props => {
     const Repository = lazy(() => import("../pages/ProjectRepository"));
     const Project = lazy(() => import("../pages/ProjectRepository/Project.js"));
     const Update = lazy(() => import("../pages/ProjectUpdate"));
+    const ProjectUpdate = lazy(() => import("../pages/ProjectUpdate/Project.js"));
 
   return (
     <>
       <BrowserRouter history={history}>
-        <Suspense fallback={<ContentLoader/>} >
+        <Suspense fallback={<ContentLoader type="TailSpin" color="#ccc" h="45" w="45" style={{ margin: "15rem auto", width: "5%",}}/>} >
           <Switch>
             {/* <SignUp
               exact
@@ -35,6 +36,7 @@ const Routes = props => {
             <PrivateRoutes exact path="/project-repository" component={Repository} />
             <PrivateRoutes exact path="/project-repository/:id" component={Project} />
             <PrivateRoutes exact path="/project-update" component={Update} />
+            <PrivateRoutes exact path="/project-update/:id" component={ProjectUpdate} />
             <Redirect to="/" />
           </Switch>
         </Suspense>

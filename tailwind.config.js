@@ -34,7 +34,8 @@ module.exports = {
           default: "#647C8F",
           bg: '#F9F9F9',
           line: '#E4EAF0',
-          notif: '#A2ADB8'
+          notif: '#A2ADB8',
+          btn: '#EFEFEF'
         },
         pending: '#0077B6',
         dark: "#001526",
@@ -164,7 +165,7 @@ module.exports = {
       DEFAULT: '0.25rem',
       md: '0.375rem',
       lg: '0.5rem',
-      xl: '0.75rem',
+      xl: '60px',
       '2xl': '1rem',
       '3xl': '1.5rem',
       full: '9999px',

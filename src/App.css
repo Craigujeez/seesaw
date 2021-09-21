@@ -8,7 +8,14 @@
     font-weight: normal;
     font-style: normal;
   }
-
+  .al-i-c{
+    align-items: center;
+  }
+  circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
   .cairo{
     font-family: 'cairo';
   }
@@ -89,4 +96,62 @@ li:hover{
 
 .work{
   font-family: 'Work Sans', sans-serif;
+}
+
+/* progress ring styling */
+.rings{
+  height: 80px;
+}
+
+.percent1 svg, .percent1 circle {
+  width: 80px;
+  height: 80px;
+}
+
+.rings circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 10;
+  transform: translate(10px, 10px);
+  stroke-dasharray: 440;
+  stroke-linecap: round;
+}
+
+.rings circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #424242;
+}
+
+.percent1{
+  position: relative;
+}
+
+.percent1 circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 29) / 100);
+  stroke: #1AB00D;
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+
+.number {
+  position: absolute;
+  bottom: 35%;
+  left: 25px;
+  color: #03045E;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+.rings span {
+  font-size: 24px;
+  opacity: .7;
+}
+
+@keyframes percent {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+  }
 }
