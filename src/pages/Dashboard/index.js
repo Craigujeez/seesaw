@@ -4,9 +4,11 @@ import { useDispatch,useSelector } from 'react-redux';
 import mapboxgl from 'mapbox-gl';
 import {fetchUserCoordinates} from "../../redux/actions/agentMonitoringAction"
 import Icon from '../../components/Icons';
-import PrivateLayout from "../../components/PrivateLayout"
+import PrivateLayout from "../../components/PrivateLayout";
 
 const Dashboard = () => {
+    // eslint-disable-next-line import/no-webpack-loader-syntax
+    mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
     const dispatch = useDispatch();
     const UserData = useSelector(state => state.agentMonitoring.data);
     const mapContainerRef = useRef(null);

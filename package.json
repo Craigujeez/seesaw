@@ -27,6 +27,7 @@
     "redux-logger": "^3.0.6",
     "tailwindcss": "^2.1.4",
     "web-vitals": "^1.0.1",
+    "worker-loader": "^3.0.8",
     "yup": "^0.32.9"
   },
   "scripts": {
