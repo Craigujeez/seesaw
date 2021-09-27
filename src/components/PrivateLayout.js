@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
-import {useLocation, useHistory } from "react-router-dom";
+import {useLocation, useHistory,Link } from "react-router-dom";
 import Icons from "./Icons";
 import Notifications from '../pages/Notifications';
 import { signOut } from '../redux/actions/authActions';
@@ -33,6 +33,8 @@ const PrivateLayout = ({children, ...rest}) => {
                 <h1 className="uppercase font-bold text-white text-base leading-8 mb-8"> SeeSaw </h1>
                 <div className="mb-7">
                     <h1 className="uppercase text-xs text-others-purple3 font-bold mb-3"> user management</h1>
+                    <p className="mt-4 text-white"><Link to="/user/login"> User Login </Link></p>
+                    
                     {DataSet.map(item => {
                         return (
                             <div className="mb-4 text-others-purple3">

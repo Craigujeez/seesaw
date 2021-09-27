@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { lazy, Suspense } from 'react';
-import {BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import AuthRoutes from "./AuthRoutes";
 import PrivateRoutes from "./PrivateRoutes";
 import ContentLoader from "../components/Loader";
@@ -31,7 +31,7 @@ const Routes = props => {
             <PrivateRoutes exact path="/user-monitoring" component={UserMonitoring} />
 
 
-            <PrivateRoutes exact path="/user/login" component={LoginUser} />
+            <Route exact path="/user/login" component={LoginUser} />
 
             <AuthRoutes
               exact

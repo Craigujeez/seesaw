@@ -55,7 +55,9 @@ const LoginPage = () => {
                         required
                     />
                     <div className="flex justify-between w-full">
-                        <div className="text-black text-base py-3"> <Link to="/forgot-password"> Forgot Password? </Link></div>
+                        <div className="text-black text-base py-3"> 
+                          <Link to="/forgot-password"> Forgot Password? </Link> <br/>
+                        </div>
                         <div>
                           <button 
                             type="submit"
