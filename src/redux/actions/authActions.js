@@ -27,12 +27,12 @@ export function loginAdmin(userData,history) {
     };
   }
   export function loginUser(userData,history,coordinates) {
-    console.log(coordinates,"hmmmmmm");
+    // console.log(coordinates,"hmmmmmm");
       return async (dispatch) => {
         try {
           dispatch({ type: LOADING_TRUE });
-          const response = await axios.post("/user/monitoring",{...userData,...coordinates});
-          if (response.data.status === "success") {
+          const response = await axios.post("/user/login",{...userData,...coordinates});
+          if (response.data.data.attributes) {
             cogoToast.success("User Login Successful")
             // localStorage.clear();
             // const { token, name,email } = response.data.data.attributes;
