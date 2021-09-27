@@ -7,7 +7,9 @@ import ContentLoader from "../components/Loader";
 import history from '../helpers/history';
 
 const Routes = props => {
-    const Login = lazy(() => import('../pages/Auth'));
+    const LoginAdmin = lazy(() => import('../pages/Auth'));
+    const LoginUser = lazy(() => import('../pages/Auth/LoginUser'));
+    const UserMonitoring = lazy(() => import('../pages/Auth/UserMonitoring'));
     const ForgotPasswordPage = lazy(() => import('../pages/Auth/ForgotPassword.js'));
     const Dashboard = lazy(() => import('../pages/Dashboard'));
     const Repository = lazy(() => import("../pages/ProjectRepository"));
@@ -25,7 +27,11 @@ const Routes = props => {
               path="/create-account"
               component={SignUp}
             /> */}
-            <AuthRoutes exact path="/" component={Login} />
+            <AuthRoutes exact path="/" component={LoginAdmin} />
+            <PrivateRoutes exact path="/user-monitoring" component={UserMonitoring} />
+
+
+            <PrivateRoutes exact path="/user/login" component={LoginUser} />
 
             <AuthRoutes
               exact

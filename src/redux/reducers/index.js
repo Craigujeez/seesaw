@@ -3,13 +3,15 @@ import auth from "./authReducer";
 import loading from "./loadingReducer";
 import projectRepository from "./projectRepositoryReducer"
 import projectUpdate from "./projectUpdateReducer";
+import agentMonitoring from './agentMonitoringReducer';
 import {LOGOUT_USER} from "../types/authTypes"
 
 export const appReducer = combineReducers({
   auth,
   loading,
   projectRepository,
-  projectUpdate
+  projectUpdate,
+  agentMonitoring,
 });
 
 const rootReducer = (state, action) => {

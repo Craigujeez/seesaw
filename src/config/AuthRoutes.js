@@ -9,7 +9,7 @@ const AuthRoutes = ({ component: AuthComponent, ...rest}) => {
         <Route
           {...rest}
           render={props =>
-            !localStorage.token ? (
+            !localStorage.token ?(
                 <AuthComponent {...props} isLoading={loading.isLoading} />
             ) : (
               //enable this line below to make route protected
