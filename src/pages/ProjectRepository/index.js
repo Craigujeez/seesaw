@@ -89,7 +89,7 @@ const Project = (props) => {
                     className="mb-3 font-semibold text-xl text-others-purple4 cursor-pointer "
                     onClick={()=>props.history.push(`/project-repository/${props.item.uuid}`)}
                 >{title}</h1>
-                <p className="text-sm font-semibold text-left w-full mb-3">{description}</p>
+                <p className="text-sm font-semibold text-left w-full mb-3">{title==="mission school project"? "This is one of the project components on the Research on Improving Systems of Education (RISE)." : description}</p>
                 <h1 className="text-lg">Status : <span className="text-xl text-pending">{status}</span></h1>
             </div>
         </div>

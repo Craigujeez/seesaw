@@ -78,9 +78,9 @@ const ProjectUpdate = () => {
                 </div>
                 <h1 className="work mb-8 cairo border-grey-line text-xl text-others-purple2"> General Update</h1>
                 <ul>
-                  <li className="mb-6 cairo text-dark list-disc list-inside"> FPE Project: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, amet nunc, sit at molestie nisl tempus urna imperdie.
+                  <li className="mb-6 cairo text-dark list-disc list-inside"> FPE Project: Facilitators have been mobilised for the First Stage of Project .
                   </li>
-                  <li className="mb-6 cairo text-dark list-disc list-inside">SEFPE Project: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, amet nunc, sit at molestie nisl tempus urna imperdie.
+                  <li className="mb-6 cairo text-dark list-disc list-inside">SBMC Project: Over 70% of Schools lack School based Management Committees.
                   </li>
                 </ul>
 

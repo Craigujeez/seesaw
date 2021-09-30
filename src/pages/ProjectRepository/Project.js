@@ -57,7 +57,7 @@ const Project = (props) => {
                 <div>
                     <h1 className="text-2xl text-others-purple2 mb-6"> {PageData.title} </h1>
                     <p className="text-others-purple2 mb-6"> Executive Summary</p>
-                    <p className="text-grey-default mb-12">{PageData.description}</p>
+                    <p className="text-grey-default mb-12">{PageData.title === "mission school project" ? "This is one of the project components on the Research on Improving Systems of Education (RISE).": PageData.description}</p>
                     <p className="text-others-purple2 mb-6"> Partners</p>
                     <div className=' w-full flex flex-wrap'>
                         {dummydata.map(item => (
